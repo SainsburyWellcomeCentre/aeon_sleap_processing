@@ -1,0 +1,23 @@
+{
+    "frozen_model_inputs": [
+        "Tensor(\"x:0\", shape=(None, 1088, 1450, 1), dtype=uint8)"
+    ],
+    "frozen_model_outputs": [
+        "Tensor(\"Identity:0\", shape=(None, None), dtype=float32)",
+        "Tensor(\"Identity_1:0\", shape=(None, None, 2), dtype=float32)",
+        "Tensor(\"Identity_2:0\", shape=(None, None, 8), dtype=float32)",
+        "Tensor(\"Identity_3:0\", shape=(None, None, 8, 2), dtype=float32)"
+    ],
+    "model_structured_input_signature": [
+        [],
+        {
+            "input_1": "TensorSpec(shape=(None, 1088, 1450, 1), dtype=tf.uint8, name='input_1')"
+        }
+    ],
+    "model_structured_outputs_signature": {
+        "centroid_vals": "RaggedTensorSpec(TensorShape([None, None]), tf.float32, 1, tf.int32)",
+        "centroids": "RaggedTensorSpec(TensorShape([None, None, 2]), tf.float32, 1, tf.int32)",
+        "instance_peak_vals": "RaggedTensorSpec(TensorShape([None, None, 8]), tf.float32, 1, tf.int32)",
+        "instance_peaks": "RaggedTensorSpec(TensorShape([None, None, 8, 2]), tf.float32, 1, tf.int32)"
+    }
+}
