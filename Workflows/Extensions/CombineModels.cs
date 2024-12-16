@@ -174,6 +174,7 @@ public class CombineModels
                     updatedPoseIdentity.Identity = missingClasses[0];
                     updatedPoseIdentity.IdentityIndex = allClasses.ToList().IndexOf(missingClasses[0]);
                     updatedPoseIdentity.Confidence = float.NaN;
+                    updatedPoseIdentity.IdentityScores = Enumerable.Repeat(float.NaN, 2).ToArray();
                 }
                 else
                 {
