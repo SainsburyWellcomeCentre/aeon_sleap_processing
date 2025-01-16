@@ -2,3 +2,5 @@
 obj
 bin
 workflow_out
+.bonsai/Packages
+.bonsai/Bonsai.exe
