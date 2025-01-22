@@ -97,25 +97,49 @@
             <Edge From="12" To="13" Label="Source1" />
           </Edges>
         </Workflow>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>ParseFilePaths</Name>
+        <Workflow>
+          <Nodes>
             <Expression xsi:type="ExternalizedMapping">
-              <Property Name="FileName" DisplayName="HomographySouthFileName" />
+              <Property Name="DataRoot" />
             </Expression>
-            <Expression xsi:type="io:CsvReader">
-              <io:FileName>Z:\aeon\homography\H_CameraSouth.csv</io:FileName>
-              <io:ListSeparator>,</io:ListSeparator>
-              <io:SkipRows>0</io:SkipRows>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Merge" />
-            </Expression>
-            <Expression xsi:type="scr:ExpressionTransform">
-              <scr:Expression>Convert.ToDouble(it)</scr:Expression>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:ToArray" />
+            <Expression xsi:type="GroupWorkflow">
+              <Name>GetVideoDirs</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="Value" DisplayName="DataRoot" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="StringProperty">
+                      <Value></Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="PropertyMapping">
+                    <PropertyMappings>
+                      <Property Name="Path" Selector="it" />
+                    </PropertyMappings>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="io:GetDirectories">
+                      <io:Path></io:Path>
+                      <io:SearchPattern>*Camera*</io:SearchPattern>
+                      <io:SearchOption>TopDirectoryOnly</io:SearchOption>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                  <Edge From="2" To="3" Label="Source1" />
+                  <Edge From="3" To="4" Label="Source1" />
+                </Edges>
+              </Workflow>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
-              <Name>HomographySouth</Name>
+              <Name>VideoDirArray</Name>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="FileName" DisplayName="HomographyWestFileName" />
