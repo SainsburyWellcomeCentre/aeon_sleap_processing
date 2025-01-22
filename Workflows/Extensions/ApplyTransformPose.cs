@@ -14,13 +14,12 @@ public class ApplyTransformPose
 {
     public double[] HomographyMatrix { get; set; }
 
-    public IObservable<PoseIdentityCollection> Process(IObservable<Tuple<PoseIdentityCollection, PoseCollection>> source)
+    public IObservable<PoseIdentityCollection> Process(IObservable<PoseIdentityCollection> source)
     {
         return source.Select(value =>
         {
-            var inputPoseIdentities = value.Item1;
-            var inputTopCamPose = value.Item2;
-            var outputCollection = new PoseIdentityCollection(inputTopCamPose.Image, inputPoseIdentities.Model);
+            var inputPoseIdentities = value;
+            var outputCollection = new PoseIdentityCollection(inputPoseIdentities.Image, inputPoseIdentities.Model);
 
             foreach (var identity in inputPoseIdentities)
             {
@@ -30,8 +29,8 @@ public class ApplyTransformPose
                 // Create a new BodyPart for the transformed centroid
                 var transformedCentroid = new BodyPart
                 {
-                Position = transformedCentroidPosition,
-                Confidence = identity.Centroid.Confidence // Retain the original confidence value
+                    Position = transformedCentroidPosition,
+                    Confidence = identity.Centroid.Confidence // Retain the original confidence value
                 };
 
                 // Create a new PoseIdentity with the transformed centroid
