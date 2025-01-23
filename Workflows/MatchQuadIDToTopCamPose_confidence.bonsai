@@ -1295,15 +1295,15 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:ApplyTransformPose">
                 <p1:HomographyMatrix>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
-                  <p1:double></p1:double>
+                  <p1:double>1</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>1</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>0</p1:double>
+                  <p1:double>1</p1:double>
                 </p1:HomographyMatrix>
               </Combinator>
             </Expression>
@@ -1498,7 +1498,7 @@
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="dsp:MatrixWriter">
-                      <dsp:Path></dsp:Path>
+                      <dsp:Path />
                       <dsp:Suffix>None</dsp:Suffix>
                       <dsp:Overwrite>false</dsp:Overwrite>
                       <dsp:Layout>ColumnMajor</dsp:Layout>
