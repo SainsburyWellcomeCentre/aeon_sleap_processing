@@ -16,8 +16,11 @@
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="Path" DisplayName="OutputDir" />
       </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="DataRoot" />
+      </Expression>
       <Expression xsi:type="GroupWorkflow">
-        <Name>LogController</Name>
+        <Name>ReprocessLogController</Name>
         <Description>Specifies default parameters for managing data logs.</Description>
         <Workflow>
           <Nodes>
@@ -26,19 +29,18 @@
             </Expression>
             <Expression xsi:type="PropertySource" TypeArguments="io:GetFiles,sys:String">
               <MemberName>Path</MemberName>
-              <Value>workflow_out</Value>
+              <Value />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="DataRoot" />
             </Expression>
             <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Timestamp" />
-            </Expression>
-            <Expression xsi:type="MemberSelector">
-              <Selector>Value</Selector>
-            </Expression>
-            <Expression xsi:type="MemberSelector">
-              <Selector>Timestamp.UtcDateTime</Selector>
+              <Combinator xsi:type="StringProperty">
+                <Value />
+              </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
-              <Combinator xsi:type="aeon:FormatDate" />
+              <Combinator xsi:type="io:GetFileName" />
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Zip" />
