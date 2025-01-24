@@ -34,10 +34,9 @@
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Value" DisplayName="DataRoot" />
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="StringProperty">
-                <Value />
-              </Combinator>
+            <Expression xsi:type="PropertySource" TypeArguments="io:GetFiles,sys:String">
+              <MemberName>Path</MemberName>
+              <Value />
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="io:GetFileName" />
@@ -110,10 +109,9 @@
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="Value" DisplayName="DataRoot" />
                   </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value />
-                    </Combinator>
+                  <Expression xsi:type="PropertySource" TypeArguments="io:GetDirectories,sys:String">
+                    <MemberName>Path</MemberName>
+                    <Value />
                   </Expression>
                   <Expression xsi:type="PropertyMapping">
                     <PropertyMappings>
@@ -150,10 +148,9 @@
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="Value" DisplayName="HomographyRoot" />
                   </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value />
-                    </Combinator>
+                  <Expression xsi:type="PropertySource" TypeArguments="io:GetFiles,sys:String">
+                    <MemberName>Path</MemberName>
+                    <Value />
                   </Expression>
                   <Expression xsi:type="PropertyMapping">
                     <PropertyMappings>
