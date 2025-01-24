@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <WorkflowBuilder Version="2.8.5"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
@@ -1332,7 +1332,10 @@
         <Combinator xsi:type="rx:Zip" />
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="p1:FindHighestConfidencePose" />
+        <Combinator xsi:type="p1:FindHighestConfidencePoseFallback" />
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item1</Selector>
       </Expression>
       <Expression xsi:type="MemberSelector">
         <Selector>CameraTopPose</Selector>
