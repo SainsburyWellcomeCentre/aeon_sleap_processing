@@ -4,7 +4,7 @@ Project Aeon computational pose and ID tracking pipeline using SLEAP.
 
 ## Overview
 
-This repository contains the code and models for the AEON project's pose and identity tracking pipeline. The pipeline is designed to track mice in the AEON arena, combining data from multiple camera views to generate high-quality tracking data with accurate identity assignments.
+This repository contains the code and models for the Aeon project's pose and identity tracking pipeline. The pipeline is designed to track mice in the Aeon arena, combining data from multiple camera views to generate high-quality tracking data with accurate identity assignments.
 
 ## Pipeline Structure
 

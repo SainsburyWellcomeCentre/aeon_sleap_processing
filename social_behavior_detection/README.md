@@ -33,7 +33,7 @@ The process:
       - Tube test detection requires 4 key points: `"nose"`, `"head"`, `"centroid"`, `"tail_base"` → mapped to SLEAP parts like `"nose"`, `"head"`, `"spine2"`, `"spine4"`
       - Fight detection** requires 8 key points: all tube test points plus `"right_ear"`, `"left_ear"`, `"upper_spine"`, `"lower_spine"` → mapped to corresponding SLEAP parts
       - The mapping allows the algorithms to work with different SLEAP model naming conventions. For example, if your model uses "snout" instead of "nose", you'd set `"nose": "snout"` in the skeleton parameter.
-    - `--video_config`: Video generation configuration as JSON string (optional, uses defaults)
+    - `--video_config`: Video generation configuration as JSON string (optional, by default does not generate videos of the detected behaviors but can be useful for checking the quality of the results)
     - `--email`: Email address for error notifications 
     - `--boundary_hour`: Hour (0-23) for daily boundary when parallelizing into 24-hour chunks (optional, processes entire epochs if not specified)
 

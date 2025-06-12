@@ -13,6 +13,7 @@ The process:
 4. Sends email notifications if any processing errors occur
 
 Finally, `bonsai_sleap_validate.ipynb` is used to visualise and validate the tracking data resulting from the Bonsai workflows.
+
 The process:
 1. Loads processed pose data using the Aeon API
 2. Randomly samples frames across multiple experiments to visually tracking quality
