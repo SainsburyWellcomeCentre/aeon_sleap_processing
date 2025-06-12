@@ -16,6 +16,10 @@ The pipeline consists of three main components:
 
 3. [**Pose and ID combining**](pose_id_combine/README.md): Tools for generating and combining pose and ID predictions
 
+## Analysis Tools
+
+[**Social Behavior Detection**](social_behavior_detection/README.md): Automated detection of social behaviors (fights, tube tests) from the pipeline's pose and identity tracking outputs
+
 ## Citation Policy
 
 If you use this software, please cite it as below:
