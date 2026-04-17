@@ -22,7 +22,7 @@ The process:
 5. Includes debugging capabilities for examining problematic frames
 
 ## Running the code
-1. Install Bonsai for use on the HPC. Since the HPC recently switched from Ubuntu 20 to Ubuntu 24, the instructions for doing this are out of date and need to be revised. You can also use Bonsai locally, though the `bonsai_sleap_automated.py` wrapper would have to be adapted accordingly. In any case, the Bonsai and NuGet configs necessary for these workflows are provided in the `bonsai` folder. It should be noted that `InferIdentities_single_basic.bonsai` expects 
+1. Install Bonsai for use on the HPC. Since the HPC recently switched from Ubuntu 20 to Ubuntu 24, the instructions for doing this are out of date and need to be revised. You can also use Bonsai locally, though the `bonsai_sleap_automated.py` wrapper would have to be adapted accordingly. In any case, the Bonsai and NuGet configs necessary for these workflows are provided in the `bonsai` folder. 
 2. For automated batch processing, activate your Aeon environment and run `bonsai_sleap_automated.py` from the HPC login node with the following arguments:
 	- `root`: Path to the root directory where the raw experiment data is, for finding the video files to process
 	- `start`: Social period start time in format YYYY-MM-DDTHH-MM-SS
